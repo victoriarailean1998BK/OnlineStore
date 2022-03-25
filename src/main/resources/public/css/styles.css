@@ -51,3 +51,10 @@ body, html {
     object-fit: cover;
     margin-top: 5px;
 }
+
+.page-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

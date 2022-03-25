@@ -19,6 +19,7 @@
 
   <body class="bg">
   <#nested>
+  <#include "footer.ftlh"/>
   </body>
   </html>
 </#macro>
