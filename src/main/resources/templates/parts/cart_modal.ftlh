@@ -8,7 +8,14 @@
       </div>
       <div class="modal-footer d-flex justify-content-between">
         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-secondary">Add</button>
+        <form action="/product/add" method="post">
+          <div hidden>
+            <input type="name" name="name" value="abc"/>
+            <input type="id" name="id" value="1"/>
+          </div>
+          <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+          <button type="submit" class="btn btn-secondary" id="confirm-add">Add</button>
+        </form>
       </div>
     </div>
   </div>

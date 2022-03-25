@@ -1,10 +1,14 @@
 package com.epam.onlinestore.controllers;
 
+import com.epam.onlinestore.entities.Product;
 import com.epam.onlinestore.repositories.ProductRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 
 @Controller
 @RequestMapping("/product")
@@ -15,10 +19,9 @@ public class ProductsController {
         this.productRepository = productRepository;
     }
 
-    @GetMapping("/{id}/add")
-    public String addToCart(@PathVariable String id) {
+    @PostMapping("/add")
+    public String addToCart(Product product, Principal principal, @RequestHeader String referer) {
 
-        return "parts/cart_modal";
+        return "redirect:" + referer;
     }
-
 }

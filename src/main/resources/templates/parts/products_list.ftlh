@@ -21,5 +21,3 @@
     </#list>
   </div>
 </#if>
-
-<#--data-bs-toggle="modal" data-bs-target="#exampleModal"-->
