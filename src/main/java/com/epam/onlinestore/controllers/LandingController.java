@@ -20,7 +20,7 @@ public class LandingController {
     @GetMapping("/")
     public String landing(Model model) {
         Page<Product> products = productRepository.findAll(PageRequest.of(0, 4, Sort.Direction.ASC, "dateCreated"));
-        model.addAttribute("new_products", products.getContent());
+        model.addAttribute("products", products.getContent());
 
         return "landing";
     }

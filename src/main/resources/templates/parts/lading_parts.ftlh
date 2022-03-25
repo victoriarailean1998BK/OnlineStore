@@ -1,21 +1,7 @@
 <#macro new>
   <div class="row shadow my-3 bg-landing">
     <h3>New products</h3>
-    <#list new_products as p>
-      <div class="col-sm-3 my-4">
-        <div class="thumb-wrapper">
-          <div class="img-box">
-            <img src="images/products/${p.imageName}" class="product_image">
-          </div>
-          <div class="thumb-content category_title mt-2">
-            <h4>${p.name}</h4>
-            <p class="item-price"> <span>$${p.price}</span></p>
-
-            <a href="#" class="btn btn-secondary">Add to Cart</a>
-          </div>
-        </div>
-      </div>
-    </#list>
+    <#include "products_list.ftlh">
   </div>
 </#macro>
 
