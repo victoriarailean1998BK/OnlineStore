@@ -1,17 +1,20 @@
 package com.epam.onlinestore.entities;
 
 import lombok.*;
+import org.hibernate.Hibernate;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Data @NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 @Table(name = "orders")
 public class Order {
     @Id
@@ -20,6 +23,7 @@ public class Order {
     private Long id;
 
     @OneToMany(mappedBy = "product")
+    @ToString.Exclude
     private Set<OrderProduct> products;
 
     @ManyToOne
@@ -37,4 +41,17 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Order order = (Order) o;
+        return id != null && Objects.equals(id, order.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

@@ -1,16 +1,20 @@
 package com.epam.onlinestore.entities;
 
 import lombok.*;
+import org.hibernate.Hibernate;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Set;
+import java.util.Objects;
 
 @Entity
-@Data @NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 @Table(name = "products")
 public class Product implements Serializable {
     @Id
@@ -27,9 +31,6 @@ public class Product implements Serializable {
     @JoinColumn(name = "category_id")
     private Category category;
 
-//    @OneToMany(mappedBy = "order")
-//    private Set<OrderProduct> productOrders;
-
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateCreated;
@@ -37,4 +38,17 @@ public class Product implements Serializable {
     @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdated;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Product product = (Product) o;
+        return id != null && Objects.equals(id, product.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
