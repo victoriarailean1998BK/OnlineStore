@@ -1,9 +1,3 @@
-body, html {
-    height: 100vh;
-    background: rgb(248,249,250);
-    background: linear-gradient(180deg, rgba(248,249,250,1) 0%, rgba(224,245,241,1) 100%);
-}
-
 .bg {
     background: rgb(248,249,250);
     background: linear-gradient(180deg, rgba(248,249,250,1) 0%, rgba(224,245,241,1) 100%);
@@ -27,8 +21,8 @@ body, html {
 }
 
 .category_image {
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
     object-fit: cover;
     margin-top: 10px;
 }
@@ -45,16 +39,8 @@ body, html {
 }
 
 .product_image {
-    width: 200px;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
-}
-
-.page-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 }
 
 @media screen and (max-width: 800px) {
@@ -64,7 +50,6 @@ body, html {
 }
 
 .bg-list-item {
-    /*max-width: 200px;*/
     font-weight: 600;
 }
 

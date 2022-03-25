@@ -17,7 +17,7 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   </head>
 
-  <body class="bg">
+  <body class="bg d-flex flex-column min-vh-100">
     <#include "navbar.ftlh"/>
     <#nested>
     <#include "footer.ftlh"/>
