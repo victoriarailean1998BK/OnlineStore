@@ -3,14 +3,14 @@ INSERT INTO users (first_name, last_name, email, password) VALUES
     ('Eve', 'Tabby', 'eve.tabby@mail.com', '$2a$10$R2jvtUly7VZhJKU9LiJpnuUKL.1ieEmWQYhuq8PXc3rDQJudY.ALy'),
     ('test', 'test', 'test@test.com', '$2a$10$R2jvtUly7VZhJKU9LiJpnuUKL.1ieEmWQYhuq8PXc3rDQJudY.ALy');
 
-INSERT INTO categories (name) VALUES
-    ('Electronics'),
-    ('Household'),
-    ('Sport'),
-    ('Tourism'),
-    ('Hobbie'),
-    ('Fashion'),
-    ('School and Office');
+INSERT INTO categories (name, image_name) VALUES
+    ('Electronics', 'electronics.jpg'),
+    ('Household', 'household.jpg'),
+    ('Sport', 'sports.jpg'),
+    ('Tourism', 'tourism.jpg'),
+    ('Hobbies', 'hobbies.jpg'),
+    ('Fashion', 'fashion.jpg'),
+    ('School and Office', 'office.jpg');
 
 INSERT INTO products (name, image_name, price, category_id) VALUES 
     ('Product_1-1', 'product_1.jpg', '2.33', 3),

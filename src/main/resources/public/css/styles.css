@@ -20,3 +20,22 @@ body, html {
     color: rgb(111, 233, 233);
     font-size: 1rem;
 }
+
+.category_text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.category_image {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+.category_title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-size: 1.2rem;
+}

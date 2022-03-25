@@ -6,12 +6,12 @@
       <i class="fas fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+      <a class="navbar-brand mt-2 mt-lg-0" href="/">
         <img src="/images/logo.png" height="60" alt="Logo" loading="lazy"/>
       </a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-text">
         <li class="nav-item">
-          <a class="nav-link" href="#">Categories</a>
+          <a class="nav-link" href="/categories">Categories</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Discounts</a>
@@ -81,10 +81,10 @@
             </li>
           <#else>
             <li>
-              <a class="dropdown-item" href="#">Login</a>
+              <a class="dropdown-item" href="/login">Login</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">Sign Up</a>
+              <a class="dropdown-item" href="/register">Sign Up</a>
             </li>
           </#if>
         </ul>

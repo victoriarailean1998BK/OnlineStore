@@ -26,4 +26,6 @@ public class Category {
     @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdated;
+
+    private String image_name;
 }
