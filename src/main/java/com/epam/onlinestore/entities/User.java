@@ -37,14 +37,6 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 
-    @OneToMany
-    @JoinTable(
-            name="users_orders",
-            joinColumns = @JoinColumn( name="user_id"),
-            inverseJoinColumns = @JoinColumn( name="order_id")
-    )
-    private Set<Order> orders;
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles;

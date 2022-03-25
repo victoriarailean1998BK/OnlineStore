@@ -21,13 +21,9 @@ public class Order {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @OneToMany
-    @JoinTable(
-            name = "order_product",
-            joinColumns = @JoinColumn(name = "order_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id"))
-    Set<Product> products;
+    @OneToMany(mappedBy = "product")
+    private Set<OrderProduct> products;
 
     @ManyToOne
-    User user;
+    private User user;
 }
