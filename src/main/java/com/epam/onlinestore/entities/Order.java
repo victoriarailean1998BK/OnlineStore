@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -32,13 +33,13 @@ public class Order {
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime dateCreated;
+    private Date dateCreated;
 
     @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime lastUpdated;
+    private Date lastUpdated;
 
-    private LocalDateTime dateCompleted;
+    private Date dateCompleted;
 
     private OrderStatus status = OrderStatus.CREATED;
 }
