@@ -13,7 +13,7 @@ INSERT INTO categories (name, image_name) VALUES
     ('School and Office', 'office.jpg');
 
 INSERT INTO products (name, image_name, price, category_id) VALUES 
-    ('Product_1-1', 'product_1.jpg', '2.33', 3),
+    ('Product_1-1', 'product_1.jpg', '2.33', 1),
     ('Product_1-2', 'product_2.jpg', '2.33', 1),
     ('Product_1-3', 'product_3.jpg', '2.33', 1),
     ('Product_1-4', 'product_4.jpg', '2.33', 1),
@@ -74,23 +74,23 @@ INSERT INTO products (name, image_name, price, category_id) VALUES
     ('Product_6-9', 'product_9.jpg', '2.33', 6);
 
 INSERT INTO orders (status, user_id) VALUES 
-    (1, 1),
-    (2, 1),
-    (2, 1),
-    (6, 1),
-    (6, 1),
-    (6, 1),
+    ('CREATED', 1),
+    ('CREATED', 1),
+    ('CREATED', 1),
+    ('CREATED', 1),
+    ('CREATED', 1),
+    ('CREATED', 1),
 
-    (1, 2),
-    (1, 2),
-    (5, 2),
+    ('CREATED', 2),
+    ('CREATED', 2),
+    ('CREATED', 2),
 
-    (1, 3),
-    (2, 3),
-    (3, 3),
-    (4, 3),
-    (5, 3),
-    (6, 3);
+    ('CREATED', 3),
+    ('CREATED', 3),
+    ('CREATED', 3),
+    ('CREATED', 3),
+    ('CREATED', 3),
+    ('CREATED', 3);
 
 INSERT INTO order_product (order_id, product_id, quantity) VALUES
     (1, 23, 22 ),

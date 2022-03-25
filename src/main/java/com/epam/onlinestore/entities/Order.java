@@ -2,6 +2,7 @@ package com.epam.onlinestore.entities;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
@@ -34,5 +35,6 @@ public class Order {
 
     private Date dateCompleted;
 
-    private OrderStatus status = OrderStatus.CREATED;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 }

@@ -26,8 +26,8 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @OneToMany(mappedBy = "order")
-    private Set<OrderProduct> productOrders;
+//    @OneToMany(mappedBy = "order")
+//    private Set<OrderProduct> productOrders;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)

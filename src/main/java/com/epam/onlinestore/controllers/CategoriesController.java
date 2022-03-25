@@ -1,6 +1,8 @@
 package com.epam.onlinestore.controllers;
 
+import com.epam.onlinestore.entities.OrderStatus;
 import com.epam.onlinestore.repositories.CategoryRepository;
+import com.epam.onlinestore.repositories.ProductRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
