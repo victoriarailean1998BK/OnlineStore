@@ -1,17 +1,17 @@
 package com.epam.onlinestore.controllers;
 
-import com.epam.onlinestore.entities.Order;
-import com.epam.onlinestore.entities.Product;
-import com.epam.onlinestore.entities.User;
+import com.epam.onlinestore.entities.*;
+import com.epam.onlinestore.repositories.OrderProductRepository;
+import com.epam.onlinestore.repositories.OrderRepository;
 import com.epam.onlinestore.repositories.ProductRepository;
 import com.epam.onlinestore.repositories.UserRepository;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -19,20 +19,44 @@ import java.util.Set;
 public class ProductsController {
     ProductRepository productRepository;
     UserRepository userRepository;
+    OrderRepository orderRepository;
+    OrderProductRepository orderProductRepository;
 
     public ProductsController(
             ProductRepository productRepository,
-            UserRepository userRepository
+            UserRepository userRepository,
+            OrderRepository orderRepository,
+            OrderProductRepository orderProductRepository
     ) {
         this.productRepository = productRepository;
         this.userRepository = userRepository;
+        this.orderRepository = orderRepository;
+        this.orderProductRepository = orderProductRepository;
     }
 
     @PostMapping("/add")
     public String addToCart(Product product, Principal principal, @RequestHeader String referer) {
         User user = userRepository.findByEmail(principal.getName());
-        Set<Order> orders = user.getOrders();
+        Order currentOrder = getCurrentOrder(user);
+        product = productRepository.getById(product.getId());
+
+        orderProductRepository.save(new OrderProduct(currentOrder, product));
 
         return "redirect:" + referer;
+    }
+
+    private Order getCurrentOrder(User user) {
+        List<Order> createdOrders = orderRepository.findOrdersByStatusAndUserOrderByDateCreatedDesc(OrderStatus.CREATED, user);
+
+        Order currentOrder = createdOrders.get(0);
+
+        // There should be only one CREATED order, set UNKNOWN status to the rest
+        // TODO: Log that
+        if (createdOrders.size() > 1) {
+            createdOrders.remove(0);
+            createdOrders.forEach(order -> order.setStatus(OrderStatus.UNKNOWN));
+        }
+
+        return currentOrder;
     }
 }

@@ -15,6 +15,11 @@ import java.util.Objects;
 @ToString
 @NoArgsConstructor
 public class OrderProduct {
+    public OrderProduct(Order order, Product product) {
+        this.order = order;
+        this.product = product;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)

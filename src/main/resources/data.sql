@@ -73,24 +73,24 @@ INSERT INTO products (name, image_name, price, category_id) VALUES
     ('Product_6-8', 'product_8.jpg', '2.33', 6),
     ('Product_6-9', 'product_9.jpg', '2.33', 6);
 
-INSERT INTO orders (status, user_id) VALUES 
-    ('CREATED', 1),
-    ('CREATED', 1),
-    ('CREATED', 1),
-    ('CREATED', 1),
-    ('CREATED', 1),
-    ('CREATED', 1),
+INSERT INTO orders (status, user_id, date_created) VALUES
+    ('COMPLETED', 1, TO_DATE('10/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 1, TO_DATE('11/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 1, TO_DATE('12/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 1, TO_DATE('13/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 1, TO_DATE('14/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 1, TO_DATE('15/02/2022', 'DD/MM/YYYY')),
 
-    ('CREATED', 2),
-    ('CREATED', 2),
-    ('CREATED', 2),
+    ('COMPLETED', 2, TO_DATE('16/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 2, TO_DATE('17/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 2, TO_DATE('18/02/2022', 'DD/MM/YYYY')),
 
-    ('CREATED', 3),
-    ('CREATED', 3),
-    ('CREATED', 3),
-    ('CREATED', 3),
-    ('CREATED', 3),
-    ('CREATED', 3);
+    ('CREATED', 3, TO_DATE('21/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 3, TO_DATE('19/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 3, TO_DATE('20/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 3, TO_DATE('22/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 3, TO_DATE('23/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 3, TO_DATE('24/02/2022', 'DD/MM/YYYY'));
 
 INSERT INTO order_product (order_id, product_id, quantity) VALUES
     (1, 23, 22 ),

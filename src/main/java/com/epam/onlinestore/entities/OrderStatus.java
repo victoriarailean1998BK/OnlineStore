@@ -6,5 +6,6 @@ public enum OrderStatus {
     ACCEPTED,
     DETAILS_REQUIRED,
     IN_PROGRESS,
-    COMPLETED
+    COMPLETED,
+    UNKNOWN
 }
