@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Controller
@@ -47,11 +48,20 @@ public class ProductsController {
         User user = userRepository.findByEmail(principal.getName());
         Order currentOrder = getCurrentOrder(user);
 
-        OrderProduct orderProduct = new OrderProduct(
-                currentOrder,
-                productRepository.getById(orderProductRequest.getProduct_id()),
-                orderProductRequest.getQuantity()
-        );
+        Product product = productRepository.getById(orderProductRequest.getProduct_id());
+        Optional<OrderProduct> dbOp = orderProductRepository.findFirstByProduct(product);
+        OrderProduct orderProduct;
+
+        if (dbOp.isPresent()) {
+            orderProduct = dbOp.get();
+            orderProduct.setQuantity(orderProductRequest.getQuantity());
+        } else {
+            orderProduct = new OrderProduct(
+                    currentOrder,
+                    product,
+                    orderProductRequest.getQuantity()
+            );
+        }
 
         orderProductRepository.save(orderProduct);
 

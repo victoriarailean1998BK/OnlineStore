@@ -38,7 +38,7 @@
     </div>
 
     <div class="d-flex align-items-center">
-      <a class="text-reset me-3" href="#">
+      <a class="text-reset me-3" href="/orders/current">
         <i class="fas fa-shopping-cart"></i>
         <#if order_items_count??>
           <span class="badge bg-primary rounded-pill">${order_items_count}</span>
