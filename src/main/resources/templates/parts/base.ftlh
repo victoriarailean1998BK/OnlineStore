@@ -18,8 +18,9 @@
   </head>
 
   <body class="bg">
-  <#nested>
-  <#include "footer.ftlh"/>
+    <#include "navbar.ftlh"/>
+    <#nested>
+    <#include "footer.ftlh"/>
   </body>
   </html>
 </#macro>

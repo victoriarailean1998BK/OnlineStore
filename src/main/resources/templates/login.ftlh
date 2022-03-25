@@ -1,9 +1,6 @@
 <#import "parts/base.ftlh" as base>
 <#import "parts/auth_form.ftlh" as form>
-<#import "parts/navbar.ftlh" as navbar>
-
 
 <@base.page>
-    <@navbar.nav/>
-    <@form.login/>
+  <@form.login/>
 </@base.page>

@@ -1,5 +1,5 @@
 <#include "security.ftlh">
-<#macro nav>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,4 +92,3 @@
     </div>
   </div>
 </nav>
-</#macro>
