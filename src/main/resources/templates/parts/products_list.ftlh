@@ -1,3 +1,4 @@
+<#include "cart_modal.ftlh">
 <#if products?size = 0>
   <div class="text-center mt-5">
     <h2>There are no products in this category</h2>
@@ -9,10 +10,10 @@
         <div class="card shadow-sm bg-transparent">
           <img src="/images/products/${product.imageName}" class="card-img-top product_image">
           <div class="card-body p-0">
-            <h4>${product.name}</h4>
+            <h4 class="product-name">${product.name}</h4>
             <div class="d-flex justify-content-between align-items-center">
               <span class="mx-1">$${product.price}</span>
-              <a href="#" class="btn btn-outline-secondary m-1">Add to Cart</a>
+              <a href="#" class="btn btn-outline-secondary m-1 add-to-cart-button" id="${product.id}">Add to Cart</a>
             </div>
           </div>
         </div>
@@ -20,3 +21,5 @@
     </#list>
   </div>
 </#if>
+
+<#--data-bs-toggle="modal" data-bs-target="#exampleModal"-->

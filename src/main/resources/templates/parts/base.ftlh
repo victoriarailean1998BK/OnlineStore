@@ -5,6 +5,7 @@
     <title>OnlineShop</title>
     <link rel="icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="/css/styles.css">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,6 +15,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   </head>
 
@@ -21,6 +23,7 @@
     <#include "navbar.ftlh"/>
     <#nested>
     <#include "footer.ftlh"/>
+    <script type="text/javascript" src="/js/util.js"></script>
   </body>
   </html>
 </#macro>
