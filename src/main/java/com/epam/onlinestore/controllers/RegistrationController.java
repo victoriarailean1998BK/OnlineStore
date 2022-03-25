@@ -23,12 +23,6 @@ public class RegistrationController {
         return "registration";
     }
 
-    @GetMapping("/test")
-    public String test(){
-        return "test";
-    }
-
-
     @PostMapping("/register")
     public String register(User user, Model model){
         try {

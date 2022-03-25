@@ -1,47 +1,121 @@
 <#macro register>
-    <div class="container">
+  <#--  <div class="container">
+    <form action="/register" method="post">
+      <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="username" class="form-control" id="username" placeholder="Enter User Name" name="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
+      </div>
+      <div class="form-group">
+        <label for="email">E-Mail:</label>
+        <input type="text" class="form-control" id="email" placeholder="Enter User a valid E-Mail" name="email">
+      </div>
+      <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" name="fullName">
+      </div>
+      <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>  -->
 
-        <form action="/register" method="post">
-            <div class="form-group">
-                <label for="username">User Name:</label>
-                <input type="username" class="form-control" id="username" placeholder="Enter User Name" name="username">
+  <div class="container">
+    <div class="col-4 offset-4">
+      <div class="card shadow-lg mt-5">
+        <div class="card-body p-5"> 
+          <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
+          <form action="/register" method="POST" class="needs-validation" novalidate="" autocomplete="on">
+            <div class="mb-3">
+              <label class="mb-2 text-muted" for="firstName">First name</label>
+              <input id="firstName" type="fist_name" class="form-control" name="firstName" value="" required autofocus>
+              <div class="invalid-feedback">
+                First name is required
+              </div>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
+            <div class="mb-3">
+              <label class="mb-2 text-muted" for="lastName">Last name</label>
+              <input id="lastName" type="last_name" class="form-control" name="lastName" value="" required>
+              <div class="invalid-feedback">
+                Last name is required
+              </div>
             </div>
-            <div class="form-group">
-                <label for="email">E-Mail:</label>
-                <input type="text" class="form-control" id="email" placeholder="Enter User a valid E-Mail" name="email">
+            <div class="mb-3">
+              <label class="mb-2 text-muted" for="email">E-Mail Address</label>
+              <input id="email" type="email" class="form-control" name="email" value="" required>
+              <div class="invalid-feedback">
+                Email is invalid
+              </div>
             </div>
-            <div class="form-group">
-                <label for="fullName">Full Name:</label>
-                <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" name="fullName">
+
+            <div class="mb-3">
+              <div class="mb-2 w-100">
+                <label class="text-muted" for="password">Password</label>
+              </div>
+              <input id="password" type="password" class="form-control" name="password" required>
+                <div class="invalid-feedback">
+                  Password is required
+                </div>
             </div>
-            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
+
+            <div class="text-center">
+              <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+              <button type="submit" class="btn btn-primary">
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </#macro>
 
 <#macro login>
-    <div class="container">
-
-        <form action="/login" method="post" >
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+  <div class="container">
+    <div class="col-4 offset-4">
+      <div class="card shadow-lg mt-5">
+        <div class="card-body p-5"> 
+          <h1 class="fs-4 card-title fw-bold mb-4">Login</h1>
+          <form action="/login" method="POST" class="needs-validation" novalidate="" autocomplete="on">
+            <div class="mb-3">
+              <label class="mb-2 text-muted" for="email">E-Mail Address</label>
+              <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+              <div class="invalid-feedback">
+                Email is invalid
+              </div>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
-            </div>
-            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-            <button type="submit" class="btn btn-primary">Log In</button>
-        </form>
 
-        <a href="/register" class="btn btn-primary mt-2" role="button">Create a new account</a>
+            <div class="mb-3">
+              <div class="mb-2 w-100">
+                <label class="text-muted" for="password">Password</label>
+              </div>
+              <input id="password" type="password" class="form-control" name="password" required>
+                <div class="invalid-feedback">
+                  Password is required
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <div class="form-check">
+                <input type="checkbox" name="remember" id="remember" class="form-check-input">
+                <label for="remember" class="form-check-label">Remember Me</label>
+              </div>
+              <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+              <button type="submit" class="btn btn-primary ms-auto">
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer py-3 border-0">
+          <div class="text-center">
+            Don't have an account? <a href="/register" class="text-dark">Create One</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </#macro>
-
-

@@ -74,7 +74,10 @@
               <a class="dropdown-item" href="#">Orders</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">Logout</a>
+              <form action="/logout" method="post" >
+                <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                <button type="submit" class="dropdown-item">Logout</button>
+              </form>
             </li>
           <#else>
             <li>

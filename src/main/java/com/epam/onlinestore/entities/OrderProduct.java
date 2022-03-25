@@ -12,7 +12,8 @@ import java.util.Date;
 @NoArgsConstructor
 public class OrderProduct {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
