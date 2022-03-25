@@ -1,0 +1,10 @@
+.navbar-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3rem;
+}
+
+.user-email-text {
+    font-style: italic;
+    color: rgb(111, 233, 233);
+    font-size: 1rem;
+}
