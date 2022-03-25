@@ -1,22 +1,21 @@
 package com.epam.onlinestore.controllers;
 
-import com.epam.onlinestore.entities.Role;
 import com.epam.onlinestore.entities.User;
+import com.epam.onlinestore.exceptions.AlreadyExistsException;
 import com.epam.onlinestore.repositories.UserRepository;
+import com.epam.onlinestore.services.AppUserDetailsService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.Collections;
-import java.util.Map;
 
 @Controller
 public class RegistrationController {
 
-    private final UserRepository userRepository;
+    private final AppUserDetailsService userService;
 
-    public RegistrationController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public RegistrationController(AppUserDetailsService userService) {
+        this.userService = userService;
     }
 
     @GetMapping("/register")
@@ -31,11 +30,14 @@ public class RegistrationController {
 
 
     @PostMapping("/register")
-    public String addUser(User user, Map<String, Object> model){
-
-        user.setRoles(Collections.singleton(Role.USER));
-
-        userRepository.save(user);
+    public String register(User user, Model model){
+        try {
+            userService.saveUser(user);
+        } catch (AlreadyExistsException e) {
+            model.addAttribute("already_exists", true);
+            model.addAttribute("email", user.getEmail());
+            return "registration";
+        }
 
         return "redirect:/login";
     }

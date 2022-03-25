@@ -5,5 +5,12 @@
 
 <@base.page>
     <@navbar.nav/>
+
     <@form.register/>
+
+    <#if already_exists??>
+        <div class="alert alert-danger" role="alert">
+            The user with ${email} email already exists!
+        </div>
+    </#if>
 </@base.page>
