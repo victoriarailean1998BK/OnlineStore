@@ -1,5 +1,6 @@
 package com.epam.onlinestore.services;
 
+import com.epam.onlinestore.entities.User;
 import com.epam.onlinestore.repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,6 +18,7 @@ public class AppUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        return userRepository.findByEmail(email);
+        User user = userRepository.findByEmail(email);
+        return user;
     }
 }
