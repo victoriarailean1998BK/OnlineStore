@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
@@ -14,10 +15,11 @@ import java.util.Objects;
 @Setter
 @ToString
 @NoArgsConstructor
-public class OrderProduct {
-    public OrderProduct(Order order, Product product) {
+public class OrderProduct implements Serializable {
+    public OrderProduct(Order order, Product product, Long quantity) {
         this.order = order;
         this.product = product;
+        this.quantity = quantity;
     }
 
     @Id

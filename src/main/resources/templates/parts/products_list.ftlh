@@ -8,7 +8,7 @@
     <#list products as product>
       <div class="col">
         <div class="card shadow-sm bg-transparent">
-          <img src="/images/products/${product.imageName}" class="card-img-top product_image">
+          <img src="/images/products/${product.imageName}" class="card-img-top product-image">
           <div class="card-body p-0">
             <h4 class="product-name">${product.name}</h4>
             <div class="d-flex justify-content-between align-items-center">

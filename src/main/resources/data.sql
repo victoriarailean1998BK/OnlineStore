@@ -85,7 +85,7 @@ INSERT INTO orders (status, user_id, date_created) VALUES
     ('COMPLETED', 2, TO_DATE('17/02/2022', 'DD/MM/YYYY')),
     ('COMPLETED', 2, TO_DATE('18/02/2022', 'DD/MM/YYYY')),
 
-    ('CREATED', 3, TO_DATE('21/02/2022', 'DD/MM/YYYY')),
+    ('COMPLETED', 3, TO_DATE('21/02/2022', 'DD/MM/YYYY')),
     ('COMPLETED', 3, TO_DATE('19/02/2022', 'DD/MM/YYYY')),
     ('COMPLETED', 3, TO_DATE('20/02/2022', 'DD/MM/YYYY')),
     ('COMPLETED', 3, TO_DATE('22/02/2022', 'DD/MM/YYYY')),

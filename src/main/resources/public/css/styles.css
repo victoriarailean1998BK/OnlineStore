@@ -38,7 +38,7 @@
     background: radial-gradient(circle, rgba(232, 245, 246, 0.7) 0%, rgba(230, 245, 245, 0.68) 100%);
 }
 
-.product_image {
+.product-image {
     height: 150px;
     object-fit: cover;
 }
@@ -64,4 +64,11 @@ a.bg-list-item:hover {
 .modal-product-name {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
+}
+
+.modal-product-image {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    display: inline-block;
 }

@@ -7,6 +7,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -17,6 +18,11 @@ import java.util.Set;
 @NoArgsConstructor
 @Table(name = "orders")
 public class Order {
+    public Order(User user) {
+        this.user = user;
+        this.status = OrderStatus.CREATED;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
@@ -24,7 +30,7 @@ public class Order {
 
     @OneToMany(mappedBy = "product")
     @ToString.Exclude
-    private Set<OrderProduct> products;
+    private Set<OrderProduct> products = new HashSet<>();
 
     @ManyToOne
     private User user;

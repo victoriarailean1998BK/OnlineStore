@@ -40,6 +40,9 @@
     <div class="d-flex align-items-center">
       <a class="text-reset me-3" href="#">
         <i class="fas fa-shopping-cart"></i>
+        <#if order_items_count??>
+          <span class="badge bg-primary rounded-pill">${order_items_count}</span>
+        </#if>
       </a>
       <div class="dropdown">
         <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
